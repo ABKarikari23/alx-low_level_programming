@@ -1,21 +1,22 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_number - Prints an integer.
- * @n: The integer to be printed.
+ * main - Lists all the natural numbers below 1024 (excluded)
+ *        that are multiples of 3 or 5.
+ *
+ * Return: Always 0.
  */
-void print_number(int n)
+int main(void)
 {
-	unsigned int num = n;
+	int i, sum = 0;
 
-	if (n < 0)
+	for (i = 0; i < 1024; i++)
 	{
-		_putchar('-');
-		num = -num;
+		if ((i % 3) == 0 || (i % 5) == 0)
+			sum += i;
 	}
 
-	if ((num / 10) > 0)
-		print_number(num / 10);
+	printf("%d\n", sum);
 
-	_putchar((num % 10) + '0');
+	return (0);
 }
