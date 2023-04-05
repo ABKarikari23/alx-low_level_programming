@@ -5,7 +5,7 @@
  * @head: Pointer to the list
  * @index: Position of the node to delete
  * Return: 1 if it succeeded, -1 if it failed
- **/
+ */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *aux_node = *head;
