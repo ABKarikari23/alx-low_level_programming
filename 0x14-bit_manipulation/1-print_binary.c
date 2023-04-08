@@ -9,23 +9,29 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int a = 2, k = 0;
+	unsigned long int i = 2, j = 0;
 
-	while (a <= n && k < 62)
+	while (i <= n && j < 62)
 	{
-		a = a << 1;
-		k++;
+		i = i << 1;
+		j++;
 	}
-	if (k != 62)
-		a = a >> 1;
 
-	while (a != 0)
+	if (j != 62)
+		i = i >> 1;
+
+	while (i != 0)
 	{
-		if ((a & n) != 0)
+		if ((i & n) != 0)
 		{
-			k++;
+			j++;
+			_putchar('1');
+		}
+		else
+		{
+			j++;
 			_putchar('0');
 		}
-		a = a >> 1;
+		i = i >> 1;
 	}
 }
